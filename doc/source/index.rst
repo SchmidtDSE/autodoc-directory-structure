@@ -11,7 +11,7 @@ Add your content using ``reStructuredText`` syntax. See the
 documentation for details.
 
 
-.. autodoc_directory_structure:: ../src
+.. autodoc_directory_structure:: ../../src
    :gitignore:
 
 
