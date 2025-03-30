@@ -1,0 +1,25 @@
+[project]
+name = "autodoc-directory-structure"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Matt Fisher", email = "mfisher87@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+autodoc-directory-structure = "autodoc_directory_structure:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+docs = [
+    "sphinx>=8.2.3",
+]
+
+[tool.uv]
+default-groups = "all"
