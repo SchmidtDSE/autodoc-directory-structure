@@ -18,8 +18,22 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 docs = [
-    "sphinx>=8.2.3",
+  "sphinx>=8.2.3",
+]
+test = [
+  "nox",
 ]
 
 [tool.uv]
 default-groups = "all"
+
+[tool.pytest.ini_options]
+addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
+xfail_strict = true
+filterwarnings = [
+  "error",
+]
+log_cli_level = "INFO"
+testpaths = [
+  "src/tests",
+]
