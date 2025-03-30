@@ -7,7 +7,9 @@ authors = [
     { name = "Matt Fisher", email = "mfisher87@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+  "sphinx>=8",
+]
 
 [project.scripts]
 autodoc-directory-structure = "autodoc_directory_structure:main"
@@ -17,11 +19,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
+dev = [
+  "nox",
+]
 docs = [
   "sphinx>=8.2.3",
 ]
 test = [
-  "nox",
+  "pytest",
 ]
 
 [tool.uv]

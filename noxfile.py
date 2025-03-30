@@ -14,5 +14,9 @@ nox.options.default_venv_backend = "uv|virtualenv"
 @nox.session
 def test(session: nox.Session) -> None:
     """Run the unit tests."""
-    session.install(".[test]")
+    session.install(".")
+
+    pyproject = nox.project.load_toml("pyproject.toml")
+    session.install(*nox.project.dependency_groups(pyproject, "test"))
+
     session.run("pytest", *session.posargs)
